@@ -1,0 +1,32 @@
+body {
+  background-image: url(./assets/whammy-background.png);
+  opacity: 85%;
+  background-repeat: no-repeat;
+  background-color: black;
+}
+h1 {
+  text-align: center;
+}
+
+p {
+  text-align: center;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 20px;
+  color: white;
+  text-shadow: 2px 2px black;
+}
+.w3-btn {
+  border-radius: 19px;
+  margin-left: 13px;
+  padding: 0px;
+  border: 0px;
+}
+.w3-content {
+  margin-bottom: 0px;
+}
+
+.w3-input {
+  max-width: 300px;
+  float: right;
+  margin-right: 40px;
+}
