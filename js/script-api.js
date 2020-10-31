@@ -13,10 +13,9 @@ $(document).ready(function () {
       url: requestURL,
       method: "GET",
     }).then(function (data) {
-      // console.log(
-      //   "Art Data: ",
-      //   data
-      // );
+      console.log("Art Data: ", data);
+      let newData = JSON.stringify(data);
+      console.log("Art newData: ", newData);
       //VARIABLE DECLARATIONS
       //dynamically create div where the HTML will be placed
       var trivia = $("#questions");
@@ -25,18 +24,17 @@ $(document).ready(function () {
       var answers = [];
 
       //get the data into the element that was created above
-      question.text(data.results[0].question);
-      // console.log(data.results[0].question);
-      answersEl.text(data.results[0].correct_answer);
+      question.text(data.results[4].question);
+      console.log(data.results[4].question);
+      answersEl.text(data.results[4].answers);
 
       //build array for answers including both incorrect and correct answers
-
-      var correct_answer = data.results[0].correct_answer;
-      var incorrect_answers = data.results[0].incorrect_answers;
-      answers.push(correct_answer);
+      var correct_answer = data.results[3].correct_answer;
+      var incorrect_answers = data.results[3].incorrect_answers;
+      answers.push(correct_answer + ",");
       answers.push(incorrect_answers);
-      // console.log("Answers Data: ", answers);
 
+      // console.log("Answers Data: ", answers);
       // console.log("Correct Answer Data: ", data.results[0].correct_answer);
       // console.log(
       //   "Incorrect Answers Data: ",
@@ -44,7 +42,10 @@ $(document).ready(function () {
       // );
 
       //append elements
-      trivia.append(question);
+      // function escapeHtml(unsafe) {
+      //   return $("<div />").text(unsafe).html();
+      // }
+      trivia.append(JSON.stringify(question));
       trivia.append(answersEl);
       trivia.append(answers);
     });
@@ -64,13 +65,24 @@ $(document).ready(function () {
       //dynamically create div where the HTML will be placed
       var trivia = $("#questions");
       var question = $("<h3>");
+      var answersEl = $("<h4>");
+      var answers = [];
 
       //get the data into the element that was created above
       question.text(data.results[0].question);
       // console.log(data.results[0].question);
+      answersEl.text(data.results[0].answers);
+
+      //build array for answers including both incorrect and correct answers
+      var correct_answer = data.results[0].correct_answer;
+      var incorrect_answers = data.results[0].incorrect_answers;
+      answers.push(correct_answer + ",");
+      answers.push(incorrect_answers);
 
       //append elements
       trivia.append(question);
+      trivia.append(answersEl);
+      trivia.append(answers);
     });
   };
 
@@ -88,13 +100,24 @@ $(document).ready(function () {
       //dynamically create div where the HTML will be placed
       var trivia = $("#questions");
       var question = $("<h3>");
+      var answersEl = $("<h4>");
+      var answers = [];
 
       //get the data into the element that was created above
       question.text(data.results[0].question);
       // console.log(data.results[0].question);
+      answersEl.text(data.results[0].answers);
+
+      //build array for answers including both incorrect and correct answers
+      var correct_answer = data.results[0].correct_answer;
+      var incorrect_answers = data.results[0].incorrect_answers;
+      answers.push(correct_answer + ",");
+      answers.push(incorrect_answers);
 
       //append elements
       trivia.append(question);
+      trivia.append(answersEl);
+      trivia.append(answers);
     });
   };
 
@@ -112,13 +135,24 @@ $(document).ready(function () {
       //dynamically create div where the HTML will be placed
       var trivia = $("#questions");
       var question = $("<h3>");
+      var answersEl = $("<h4>");
+      var answers = [];
 
       //get the data into the element that was created above
       question.text(data.results[0].question);
       // console.log(data.results[0].question);
+      answersEl.text(data.results[0].answers);
+
+      //build array for answers including both incorrect and correct answers
+      var correct_answer = data.results[0].correct_answer;
+      var incorrect_answers = data.results[0].incorrect_answers;
+      answers.push(correct_answer + ",");
+      answers.push(incorrect_answers);
 
       //append elements
       trivia.append(question);
+      trivia.append(answersEl);
+      trivia.append(answers);
     });
   };
 
@@ -136,13 +170,24 @@ $(document).ready(function () {
       //dynamically create div where the HTML will be placed
       var trivia = $("#questions");
       var question = $("<h3>");
+      var answersEl = $("<h4>");
+      var answers = [];
 
       //get the data into the element that was created above
       question.text(data.results[0].question);
       // console.log(data.results[0].question);
+      answersEl.text(data.results[0].answers);
+
+      //build array for answers including both incorrect and correct answers
+      var correct_answer = data.results[0].correct_answer;
+      var incorrect_answers = data.results[0].incorrect_answers;
+      answers.push(correct_answer + ",");
+      answers.push(incorrect_answers);
 
       //append elements
       trivia.append(question);
+      trivia.append(answersEl);
+      trivia.append(answers);
     });
   };
 
