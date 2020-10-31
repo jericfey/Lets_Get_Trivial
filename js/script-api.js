@@ -14,8 +14,8 @@ $(document).ready(function () {
       method: "GET",
     }).then(function (data) {
       console.log("Art Data: ", data);
-      let newData = JSON.stringify(data);
-      console.log("Art newData: ", newData);
+      // let newData = JSON.stringify(data);
+      // console.log("Art newData: ", newData);
       //VARIABLE DECLARATIONS
       //dynamically create div where the HTML will be placed
       var trivia = $("#questions");
@@ -45,7 +45,16 @@ $(document).ready(function () {
       // function escapeHtml(unsafe) {
       //   return $("<div />").text(unsafe).html();
       // }
-      trivia.append(JSON.stringify(question));
+
+      //Trying to decode the HTML
+      var fixedQuestion = fixEncoding (question) {
+        var theString : $("#questions").val():
+        var varQuestion = $("<textarea />").html(theString).text();
+        $("#questions").text(varQuestion);
+        return false;
+      });
+
+      trivia.append(fixedQuestion);
       trivia.append(answersEl);
       trivia.append(answers);
     });
