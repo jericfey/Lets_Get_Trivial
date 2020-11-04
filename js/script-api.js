@@ -4,6 +4,15 @@ $(document).ready(function () {
   //Clear the div before displaying the next question/answer set
   $("#questions").empty();
 
+  // generateQuestions() {
+  //   switch(expression{
+  //     case "art" : getArtTrivia();
+  //     break;
+  //     case
+
+  //   })
+  // }
+
   //Pull Art Trivia questions and answers
   var getArtTrivia = function () {
     var requestURL =
@@ -47,14 +56,14 @@ $(document).ready(function () {
       // }
 
       //Trying to decode the HTML
-      var fixedQuestion = fixEncoding (question) {
-        var theString : $("#questions").val():
-        var varQuestion = $("<textarea />").html(theString).text();
-        $("#questions").text(varQuestion);
-        return false;
-      });
+      // var fixedQuestion = fixEncoding (question) {
+      //   var theString : $("#questions").val():
+      //   var varQuestion = $("<textarea />").html(theString).text();
+      //   $("#questions").text(varQuestion);
+      //   return false;
+      // });
 
-      trivia.append(fixedQuestion);
+      trivia.append(question);
       trivia.append(answersEl);
       trivia.append(answers);
     });
@@ -139,11 +148,11 @@ $(document).ready(function () {
       url: requestURL,
       method: "GET",
     }).then(function (data) {
-      console.log("Books Data: ", data);
+      // console.log("Books Data: ", data);
       //VARIABLE DECLARATIONS
       //dynamically create div where the HTML will be placed
       var trivia = $("#questions");
-      var question = $("<h3>");
+      var question = $("<p>");
       var answersEl = $("<h4>");
       var answers = [];
 
@@ -174,7 +183,7 @@ $(document).ready(function () {
       url: requestURL,
       method: "GET",
     }).then(function (data) {
-      console.log("History Data: ", data);
+      // console.log("History Data: ", data);
       //VARIABLE DECLARATIONS
       //dynamically create div where the HTML will be placed
       var trivia = $("#questions");
@@ -200,15 +209,17 @@ $(document).ready(function () {
     });
   };
 
+  //Pull random Chuck Norris Joke
+
   //EVENT LISTENERS
   $("#art").on("click", getArtTrivia);
   $("#music").on("click", getMusicTrivia);
   $("#sports").on("click", getSportsTrivia);
   $("#books").on("click", getBooksTrivia);
   $("#history").on("click", getHistoryTrivia);
+  // $("#chuck").on("click", getChuck);
 });
 
-//I could not get the event listener to work with the button class of "art", added id="art" to button
 //Added JavaScript and jQuery links before body element end
 //Added div class="questions"
 //How to format returned question like this "On which Beatles album would you find the song &#039;Eleanor Rigby&#039;?"
