@@ -54,18 +54,6 @@ $(document).ready(function () {
       //   data.results[0].incorrect_answers
       // );
 
-      //append elements
-      // function escapeHtml(unsafe) {
-      //   return $("<div />").text(unsafe).html();
-      // }
-
-      //Trying to decode the HTML
-      // var fixedQuestion = fixEncoding (question) {
-      //   var theString : $("#questions").val():
-      //   var varQuestion = $("<textarea />").html(theString).text();
-      //   $("#questions").text(varQuestion);
-      //   return false;
-      // });
 
       trivia.append(question);
       trivia.append(answersEl);
@@ -158,7 +146,7 @@ $(document).ready(function () {
       url: requestURL,
       method: "GET",
     }).then(function (data) {
-      // console.log("Books Data: ", data);
+      console.log("Books Data: ", data);
       //VARIABLE DECLARATIONS
       //dynamically create div where the HTML will be placed
       var trivia = $("#questions");
@@ -195,7 +183,7 @@ $(document).ready(function () {
       url: requestURL,
       method: "GET",
     }).then(function (data) {
-      // console.log("History Data: ", data);
+      console.log("History Data: ", data);
       //VARIABLE DECLARATIONS
       //dynamically create div where the HTML will be placed
       var trivia = $("#questions");
@@ -250,6 +238,7 @@ $(document).ready(function () {
   $("#home-category").click(function () {
     window.location.href = "./index.html";
   });
+
 });
 
 //Added JavaScript and jQuery links before body element end
