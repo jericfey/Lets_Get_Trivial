@@ -162,10 +162,10 @@ $(document).ready(function () {
       answersEl.text(data.results[0].answers);
 
       //build array for answers including both incorrect and correct answers
-      var correct_answer = data.results[0].correct_answer;
-      var incorrect_answers = data.results[0].incorrect_answers;
-      answers.push(correct_answer + ",");
-      answers.push(incorrect_answers);
+      var correctAnswer = data.results[0].correct_answer;
+      var incorrectAnswers = data.results[0].incorrect_answers;
+      answers.push(correctAnswer + ",");
+      answers.push(incorrectAnswers);
 
       //append elements
       trivia.append(question);
@@ -210,6 +210,14 @@ $(document).ready(function () {
   };
 
   //Pull random Chuck Norris Joke
+  var getChuck = function () {
+    var requestURL =
+      "https://opentdb.com/api.php?amount=15&category=23&type=multiple";
+
+    $.ajax({
+      url: requestURL,
+      method: "GET",
+    }).then(function (data) {
 
   //EVENT LISTENERS
   $("#art").on("click", getArtTrivia);
