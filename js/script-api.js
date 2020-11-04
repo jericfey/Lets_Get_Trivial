@@ -33,9 +33,9 @@ $(document).ready(function () {
       var answers = [];
 
       //get the data into the element that was created above
-      question.text(data.results[4].question);
+      question.html(data.results[4].question);
       console.log(data.results[4].question);
-      answersEl.text(data.results[4].answers);
+      answersEl.html(data.results[4].answers);
 
       //build array for answers including both incorrect and correct answers
       var correct_answer = data.results[3].correct_answer;
@@ -87,9 +87,9 @@ $(document).ready(function () {
       var answers = [];
 
       //get the data into the element that was created above
-      question.text(data.results[0].question);
+      question.html(data.results[0].question);
       // console.log(data.results[0].question);
-      answersEl.text(data.results[0].answers);
+      answersEl.html(data.results[0].answers);
 
       //build array for answers including both incorrect and correct answers
       var correct_answer = data.results[0].correct_answer;
@@ -122,9 +122,9 @@ $(document).ready(function () {
       var answers = [];
 
       //get the data into the element that was created above
-      question.text(data.results[0].question);
+      question.html(data.results[0].question);
       // console.log(data.results[0].question);
-      answersEl.text(data.results[0].answers);
+      answersEl.html(data.results[0].answers);
 
       //build array for answers including both incorrect and correct answers
       var correct_answer = data.results[0].correct_answer;
@@ -152,14 +152,14 @@ $(document).ready(function () {
       //VARIABLE DECLARATIONS
       //dynamically create div where the HTML will be placed
       var trivia = $("#questions");
-      var question = $("<p>");
+      var question = $("<h3>");
       var answersEl = $("<h4>");
       var answers = [];
 
       //get the data into the element that was created above
-      question.text(data.results[0].question);
+      question.html(data.results[0].question);
       // console.log(data.results[0].question);
-      answersEl.text(data.results[0].answers);
+      answersEl.html(data.results[0].answers);
 
       //build array for answers including both incorrect and correct answers
       var correctAnswer = data.results[0].correct_answer;
@@ -192,9 +192,9 @@ $(document).ready(function () {
       var answers = [];
 
       //get the data into the element that was created above
-      question.text(data.results[0].question);
+      question.html(data.results[0].question);
       // console.log(data.results[0].question);
-      answersEl.text(data.results[0].answers);
+      answersEl.html(data.results[0].answers);
 
       //build array for answers including both incorrect and correct answers
       var correct_answer = data.results[0].correct_answer;
@@ -211,21 +211,26 @@ $(document).ready(function () {
 
   //Pull random Chuck Norris Joke
   var getChuck = function () {
-    var requestURL =
-      "https://opentdb.com/api.php?amount=15&category=23&type=multiple";
+    var requestURL = "https://api.chucknorris.io/jokes/random";
 
     $.ajax({
       url: requestURL,
       method: "GET",
     }).then(function (data) {
-
+      console.log(data.value);
+      var trivia = $("#questions");
+      var joke = $("<h3>");
+      joke.html(data.value);
+      trivia.append(joke);
+    });
+  };
   //EVENT LISTENERS
   $("#art").on("click", getArtTrivia);
   $("#music").on("click", getMusicTrivia);
   $("#sports").on("click", getSportsTrivia);
   $("#books").on("click", getBooksTrivia);
   $("#history").on("click", getHistoryTrivia);
-  // $("#chuck").on("click", getChuck);
+  $("#chuck").on("click", getChuck);
 });
 
 //Added JavaScript and jQuery links before body element end
@@ -233,3 +238,5 @@ $(document).ready(function () {
 //How to format returned question like this "On which Beatles album would you find the song &#039;Eleanor Rigby&#039;?"
 //.empty() isn't working to clear the div before going to the next question
 //Will need to randomize correct_answer with incorrect_answers by appending the array for answers with incorrect_answers and correct_answer
+//put joke in #questions div for testing
+//created 
