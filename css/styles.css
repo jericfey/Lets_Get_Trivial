@@ -65,7 +65,7 @@ h3 {
   animation: glow 1s ease-in-out infinite alternate;
 }
 
-@-webkit-keyframes glow {
+/* @-webkit-keyframes glow {
   from {
     text-shadow: 0 0 10px black, 0 0 20px black, 0 0 30px black, 0 0 40px white;
   }
@@ -73,4 +73,4 @@ h3 {
     text-shadow: 0 0 10px black, 0 0 20px black, 0 0 30px black, 0 0 40px white,
       0 0 50px white;
   }
-}
+} */

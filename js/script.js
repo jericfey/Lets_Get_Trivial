@@ -1,9 +1,6 @@
 $(document).ready(function () {
   //FUNCTIONS
 
-  //Clear the div before displaying the next question/answer set
-  $("#questions").empty();
-
   // generateQuestions() {
   //   switch(expression{
   //     case "art" : getArtTrivia();
@@ -15,8 +12,12 @@ $(document).ready(function () {
 
   //Pull Art Trivia questions and answers
   var getArtTrivia = function () {
+    //Clear the div before displaying the next question/answer set
+    $("#questions").empty();
     //Open art page
     window.location.href = "./art.html";
+
+    // event.preventDefault();
 
     var requestURL =
       "https://opentdb.com/api.php?amount=15&category=25&type=multiple";
@@ -41,10 +42,10 @@ $(document).ready(function () {
       answersEl.html(data.results[4].answers);
 
       //build array for answers including both incorrect and correct answers
-      var correct_answer = data.results[3].correct_answer;
-      var incorrect_answers = data.results[3].incorrect_answers;
-      answers.push(correct_answer + ",");
-      answers.push(incorrect_answers);
+      var correctAnswer = data.results[3].correct_answer;
+      var incorrectAnswers = data.results[3].incorrect_answers;
+      answers.push(correctAnswer + ",");
+      answers.push(incorrectAnswers);
 
       // console.log("Answers Data: ", answers);
       // console.log("Correct Answer Data: ", data.results[0].correct_answer);
@@ -97,10 +98,10 @@ $(document).ready(function () {
       answersEl.html(data.results[0].answers);
 
       //build array for answers including both incorrect and correct answers
-      var correct_answer = data.results[0].correct_answer;
-      var incorrect_answers = data.results[0].incorrect_answers;
-      answers.push(correct_answer + ",");
-      answers.push(incorrect_answers);
+      var correctAnswer = data.results[0].correct_answer;
+      var incorrectAnswers = data.results[0].incorrect_answers;
+      answers.push(correctAnswer + ",");
+      answers.push(incorrectAnswers);
 
       //append elements
       trivia.append(question);
@@ -134,10 +135,10 @@ $(document).ready(function () {
       answersEl.html(data.results[0].answers);
 
       //build array for answers including both incorrect and correct answers
-      var correct_answer = data.results[0].correct_answer;
-      var incorrect_answers = data.results[0].incorrect_answers;
-      answers.push(correct_answer + ",");
-      answers.push(incorrect_answers);
+      var correctAnswer = data.results[0].correct_answer;
+      var incorrectAnswers = data.results[0].incorrect_answers;
+      answers.push(correctAnswer + ",");
+      answers.push(incorrectAnswers);
 
       //append elements
       trivia.append(question);
@@ -208,10 +209,10 @@ $(document).ready(function () {
       answersEl.html(data.results[0].answers);
 
       //build array for answers including both incorrect and correct answers
-      var correct_answer = data.results[0].correct_answer;
-      var incorrect_answers = data.results[0].incorrect_answers;
-      answers.push(correct_answer + ",");
-      answers.push(incorrect_answers);
+      var correctAnswer = data.results[0].correct_answer;
+      var incorrectAnswers = data.results[0].incorrect_answers;
+      answers.push(correctAnswer + ",");
+      answers.push(incorrectAnswers);
 
       //append elements
       trivia.append(question);
