@@ -22,7 +22,7 @@ main {
   list-style: none;
   opacity: 80%;
 }
-.questions {
+#questions {
   position: absolute;
   color: black;
 }
