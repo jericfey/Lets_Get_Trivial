@@ -26,6 +26,28 @@ main {
   position: absolute;
   color: white;
 }
+.buttons {
+  display: flex;
+  flex-flow: row wrap;
+  opacity: 85%;
+  justify-content: space-around;
+  margin-top: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  list-style: none;
+  max-width: 80%;
+}
+#art,
+#history,
+#music,
+#sports,
+#books {
+  max-width: 150px;
+  border-radius: 20px;
+  background-color: black;
+  padding: 5px;
+}
 #whammy {
   position: absolute;
   color: white;
