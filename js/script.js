@@ -18,16 +18,17 @@ $(document).ready(function () {
     }).then(function (data) {
       console.log("Data: ", data);
 
-      //letIABLE DECLARATIONS
+      //VARIABLE DECLARATIONS
       //dynamically create div where the HTML will be placed
       let trivia = $("#questions");
       let question = $("<h3>");
-      let answersEl = $("<h3>");
+      // let answersEl = $("<h3>");
       let answers = [];
 
       //get the data into the element that was created above
       question.html(data.results[4].question);
       console.log("Question:", data.results[4].question);
+      trivia.append(question);
 
       //build array for answers including both incorrect and correct answers
       let correctAnswer = data.results[3].correct_answer;
@@ -54,10 +55,9 @@ $(document).ready(function () {
         questionsEl.appendChild(answersBtn);
       }
 
-      answersEl.html(answers);
+      // answersEl.html(answers);
       console.log("Answers:", answers);
 
-      trivia.append(question);
       //Appends array of answers to the page
       // trivia.append(answersEl);
       // trivia.append(answers);
@@ -84,7 +84,7 @@ $(document).ready(function () {
   $(".w3-btn").on("click", function () {
     let category;
     switch (this.id) {
-      case "art": 
+      case "art":
         category = 25;
         break;
       case "music":
@@ -122,4 +122,3 @@ $(document).ready(function () {
 //How to format returned question like this "On which Beatles album would you find the song &#039;Eleanor Rigby&#039;?"
 //.empty() isn't working to clear the div before going to the next question
 //Will need to randomize correct_answer with incorrect_answers by appending the array for answers with incorrect_answers and correct_answer
-

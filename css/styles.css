@@ -5,7 +5,7 @@ html {
 }
 
 body {
-  background-image: url(/assets/whammy-home-background.png);
+  background-image: url(../assets/whammy-home-background.png);
   opacity: 100%;
   background-repeat: no-repeat;
 }
@@ -45,6 +45,18 @@ body {
   background-color: black;
   padding: 5px;
 }
+.buttons {
+  display: flex;
+  flex-flow: row wrap;
+  opacity: 85%;
+  justify-content: space-around;
+  margin-top: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  list-style: none;
+  max-width: 80%;
+}
 p {
   text-align: center;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
@@ -65,7 +77,24 @@ h3 {
   animation: glow 1s ease-in-out infinite alternate;
 }
 
-/* @-webkit-keyframes glow {
+.w3-btn {
+  display: flex;
+  flex-flow: row wrap;
+  opacity: 85%;
+  justify-content: space-around;
+  margin-top: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  list-style: none;
+  max-width: 80%;
+  max-width: 150px;
+  border-radius: 20px;
+  background-color: black;
+  padding: 5px;
+}
+
+@-webkit-keyframes glow {
   from {
     text-shadow: 0 0 10px black, 0 0 20px black, 0 0 30px black, 0 0 40px white;
   }
@@ -73,4 +102,4 @@ h3 {
     text-shadow: 0 0 10px black, 0 0 20px black, 0 0 30px black, 0 0 40px white,
       0 0 50px white;
   }
-} */
+}
