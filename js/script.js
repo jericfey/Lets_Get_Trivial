@@ -19,3 +19,18 @@ $("#home").click(function() {
 $("#home-category").click(function() {
     window.location.href='./index.html'
 })
+
+$(document).ready(function()
+{
+    $(".gif").hover(
+        function()
+        {
+          var src = $(this).attr("src");
+          $(this).attr("src", src.replace(/\.png$/i, ".gif"));
+        },
+        function()
+        {
+          var src = $(this).attr("src");
+          $(this).attr("src", src.replace(/\.gif$/i, ".png"));
+        });
+});
