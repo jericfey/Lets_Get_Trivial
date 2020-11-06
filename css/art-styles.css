@@ -49,9 +49,10 @@ main {
   background-color: black;
   padding: 5px;
 }
-#whammy {
+#whammie {
   position: absolute;
-  color: white;
+  max-width: 25%;
+  
 }
 .button {
   display: flex;
@@ -70,9 +71,10 @@ p {
 
 h3 {
   text-align: center;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  font-size: 20px;
-  color: gold;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  margin-top: 30px;
+  color: white;
   text-align: center;
   text-shadow: 2px 2px 5px black;
 }

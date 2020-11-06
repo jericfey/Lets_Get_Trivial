@@ -2,6 +2,8 @@ $(document).ready(function () {
   //FUNCTIONS
   let questionsEl = document.getElementById("questions");
   var correctAnswer = "";
+
+  $("#whammies").hide();
   //Pull Trivia questions and answers based on category selected by player
   function getTrivia(category) {
     //Clear the div before displaying the next question/answer set
@@ -62,7 +64,7 @@ $(document).ready(function () {
       method: "GET",
     }).then(function (data) {
       console.log(data.value);
-      let trivia = $("#questions");
+      let trivia = $("#jokes");
       let joke = $("<h3>");
       joke.html(data.value);
       trivia.append(joke);
@@ -112,30 +114,70 @@ $(document).ready(function () {
   //FUNCTION AND VARIABLES TO KEEP TRACK OF HIGH SCORE AND RANDOMIZE QUESTIONS/ANSWERS
   var historicalCorrect = 0; // user score
   var qCounter = 0; // to keep track of what question the user is on
+  var wrongCount = 0;
+  // for (let i = 0; i < 10; i++) {
   if (localStorage.getItem("historicalCorrect")) {
     historicalCorrect = parseInt(localStorage.getItem("historicalCorrect"));
   }
   $("#questions").on("click", "button", function () {
     console.log(this.textContent);
-    if (this.textContent == correctAnswer) {
-      // console.log("Yo that's right bro")
-      historicalCorrect += 10;
-      qCounter++;
-      console.log(qCounter);
-      localStorage.setItem("historicalCorrect", historicalCorrect);
+    if (qCounter < 2 || wrongCount < 4) {
+      if (this.textContent == correctAnswer) {
+        // console.log("Yo that's right bro")
+        historicalCorrect += 10;
+        qCounter++;
+        // add set timeout button
+        console.log(qCounter);
+        localStorage.setItem("historicalCorrect", historicalCorrect);
+      } else {
+        wrongCount++;
+        $("#questions").hide(3000, function () {
+          console.log("Hide Questions");
+          $("#whammies").show(5000, function () {
+            console.log("show whammies");
+            $("#whammies").hide();
+            $("#questions").show();
+          });
+        });
+
+        console.log("Nah"); //WHAMMY function/gif goes here
+      }
+      getTrivia(category);
     } else {
-      console.log("Nah"); //WHAMMY function/gif goes here
+      window.location.href = "./highscore_win.html";
     }
-    getTrivia(category);
   });
+  // }
   //LOCAL STORAGE
   var userName = document.getElementById("username");
   userName.value = localStorage.getItem("lastUsername") || "";
-  console.log(userName);
+  // console.log(userName)
   document
     .getElementById("highScoreForm")
     .addEventListener("submit", function (event) {
       event.preventDefault();
       localStorage.setItem("lastUsername", userName.value);
+      getChuck();
+      let winnerName = $("#winner");
+      winnerName.append(historicalCorrect);
+      winnerName.append(lastUsername);
     });
 });
+//Added JavaScript and jQuery links before body element end
+//Added div class="questions"
+//How to format returned question like this "On which Beatles album would you find the song &#039;Eleanor Rigby&#039;?"
+//.empty() isn't working to clear the div before going to the next question
+//Will need to randomize correct_answer with incorrect_answers by appending the array for answers with incorrect_answers and correct_answer
+//     $(".gif").hover(
+//         function()
+//         {
+//           var src = $(this).attr("src");
+//           $(this).attr("src", src.replace(/\.png$/i, ".gif"));
+//         },
+//         function()
+//         {
+//           var src = $(this).attr("src");
+//           $(this).attr("src", src.replace(/\.gif$/i, ".png"));
+//         });
+//see if we can have the highscore page js in the saem script file, otherwise create new one. link button
+//to highscore page
