@@ -4,31 +4,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lets Get Trivial!</title>
-    <link rel="stylesheet" href="./css/styles.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
-    <script src="./js/script.js" defer></script>
+    <title>Art Category</title>
+    <link rel="stylesheet" href="./css/art-styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    
+    <script src="./js/script.js" type="text/javascript"></script>
+
 </head>
 
 <body>
     <main>
         <div class="container">
-            <img src="./assets/Whammy-game-home-page.png" id="homeBG" alt="Lights" style="width:100%">
-            <!-- <div id="questions"></div> -->
+            <div id="questions"></div>
+            <picture>
+                <source media="(min-width: 950px)" srcset="./assets/Whammy-game-art-page.png">
+                <img src="./assets/Whammy-game-art-page-mobile.png" alt="Let's Get Trivial - Art">
+            </picture>
         </div>
-        <h3>Can you beat the Whammy's?</h3>
-        <div class="buttons">
-            <button id="play"><img src="./assets/Art_Btn.png"></button>
-        </div>
-        <p>
-            <!-- <label>Enter Your Name & Hit Enter to Play... </label>
-            <input class="nameField" type="text" value="What's Your Name?"> -->
-        </p>
-        <br>
 
+        <P>Answer right or you will get a whammy...</P>
+        <div class="button">
+            <button id="home-category">Try a New Category</button>
+            <button id="home">Start Over</button>
+        </div>
+        <br>
     </main>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+
+    <script src="./js/script.js" type="text/javascript"></script>
+    <script>
+        getArtTrivia();
+    </script>
 </body>
 
 </html>

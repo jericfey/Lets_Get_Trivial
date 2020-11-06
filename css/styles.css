@@ -35,11 +35,7 @@ body {
   list-style: none;
   max-width: 80%;
 }
-#art,
-#history,
-#music,
-#sports,
-#books {
+#play {
   max-width: 150px;
   border-radius: 20px;
   background-color: black;

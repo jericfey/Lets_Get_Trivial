@@ -50,8 +50,8 @@ $(document).ready(function () {
         answersBtn.setAttribute("class", "w3-btn");
 
         answersBtn.textContent = answers[randomIndex];
-        // Append the answersBtn somewhere
 
+        // Append the answersBtn somewhere
         questionsEl.appendChild(answersBtn);
       }
 
