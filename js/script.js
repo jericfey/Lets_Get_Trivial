@@ -3,8 +3,12 @@ $(document).ready(function () {
 
   let questionsEl = document.getElementById("questions");
   var correctAnswer = "";
-  
+
   $("#whammies").hide();
+  $("#whammies-2").hide();
+  $("#whammies-3").hide();
+  $("#whammies-4").hide();
+
   //Pull Trivia questions and answers based on category selected by player
   function getTrivia(category) {
     //Clear the div before displaying the next question/answer set
@@ -152,7 +156,7 @@ $(document).ready(function () {
     } else if (
       qCounter < 11 &&
       this.textContent !== correctAnswer &&
-      wrongCount < 2
+      wrongCount < 4
     ) {
       //This is counting but then sending user to home page immediately
       wrongCount++;
@@ -163,11 +167,28 @@ $(document).ready(function () {
       $("#questions").hide(2000, function () {
         whammySound.play();
         // console.log("Hide Questions");
-        $("#whammies").show(3000, function () {
-          // console.log("show whammies");
-          $("#whammies").hide();
-          $("#questions").show();
-        });
+
+        if (wrongCount === 1) {
+          $("#whammies").show(3000, function () {
+            // console.log("show whammies");
+            $("#whammies").hide();
+            $("#questions").show();
+          });
+        } else if (wrongCount === 2) {
+          $("#whammies-2").show(3000, function () {
+            // console.log("show whammies");
+            $("#whammies-2").hide();
+            $("#questions").show();
+          });
+        } else if (wrongCount === 3) {
+          $("#whammies-3").show(3000, function () {
+            // console.log("show whammies");
+            $("#whammies-3").hide();
+            $("#questions").show();
+          });
+        } else {
+          endGame();
+        }
       });
       //condition to end the game
     } else {
