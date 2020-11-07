@@ -20,7 +20,8 @@ main {
   list-style: none;
   opacity: 80%;
 }
-#jokes {
+#jokes,
+#winner {
   position: absolute;
   color: black;
   max-width: 25%;
@@ -93,12 +94,22 @@ h3 {
   text-align: center;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: 20px;
-  color: gold;
+  color: white;
   text-align: center;
   text-shadow: 2px 2px 5px black;
 }
 
-@-webkit-keyframes glow {
+#winner {
+  text-align: center;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  text-shadow: 2px 2px 5px black;
+  margin-top: 20px;
+  padding: 30px;
+}
+/* @-webkit-keyframes glow {
   from {
     text-shadow: 0 0 10px black, 0 0 20px black, 0 0 30px black, 0 0 40px white;
   }
@@ -106,4 +117,4 @@ h3 {
     text-shadow: 0 0 10px black, 0 0 20px black, 0 0 30px black, 0 0 40px white,
       0 0 50px white;
   }
-}
+} */
