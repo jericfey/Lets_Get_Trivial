@@ -3,6 +3,7 @@ $(document).ready(function () {
 
   let questionsEl = document.getElementById("questions");
   var correctAnswer = "";
+  
   $("#whammies").hide();
   //Pull Trivia questions and answers based on category selected by player
   function getTrivia(category) {
@@ -31,6 +32,7 @@ $(document).ready(function () {
       trivia.append(question);
       //build array for answers including both incorrect and correct answers
       correctAnswer = data.results[randomIndex].correct_answer;
+      // console.log("this is a correct answer", correctAnswer);
       let incorrectAnswers = data.results[randomIndex].incorrect_answers;
       // answers = answers.concat(incorrectAnswers);
       answers = [correctAnswer, ...incorrectAnswers];
@@ -40,7 +42,7 @@ $(document).ready(function () {
         let answersBtn = document.createElement("button");
         answersBtn.setAttribute("class", "w3-btn");
         answersBtn.setAttribute("id", i);
-        answersBtn.textContent = answers[randomPosition];
+        answersBtn.innerHTML = answers[randomPosition];
         //added a random position variable so the answers append to random positions, then spliced that position by one, so the function is forced to put answer elsewhere
         // Append the answersBtn somewhere
         questionsEl.appendChild(answersBtn);
