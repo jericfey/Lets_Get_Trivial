@@ -10,10 +10,13 @@ Challenges: HTML encoding of the questions and answers, using Math.random to gen
 Successes: Very impressive graphics and design. Using CSS to align text correctly on the page.
 
 Demo:
-Link to game here...
+https://jericfey.github.io/Lets_Get_Trivial/
 
 Future Development:
 · Individual pages for each category that has images and animations unique to each page
 · Using Show and hide functions to introduce more functionality and graphics
 · Add an animated spinning wheel at the end of the game to select Chuck Norris Joke or play a song
 · Create your own Whammies avatar option at end of game
+
+Screenshot:
+![Let's Get Trivial Screenshot](./assets/ScreenShot_1.png)
